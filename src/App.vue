@@ -1,12 +1,18 @@
 <template>
-  <router-view></router-view>
+  <div class="app-container">
+    <NavBar />
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
-// import MapView from "./components/MapView.vue"
-export default {
-  name: "App",
-};
+<script setup>
+import NavBar from './components/NavBar.vue';
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+</style>
