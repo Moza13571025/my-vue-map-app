@@ -1,7 +1,6 @@
 <template>
-  <div class="h-screen">
-    <h1>地圖頁面</h1>
-    <div id="map" class="w-full h-full"></div>
+  <div class="map-container">
+    <div id="map"></div>
   </div>
 </template>
 
@@ -19,9 +18,24 @@ onMounted(() => {
 });
 </script>
 
-<style>
-#map {
-  height: 100vh;
-  width: 100dvw;
+<style lang="scss" scoped>
+.map-container {
+  position: fixed;
+  top: 64px; /* 導航欄高度 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    top: 56px; /* 響應式導航欄高度 */
+  }
 }
 </style>
